@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharma App</title>
+    <link rel="icon" type="image/x-icon" href="images/Pharma-app.png" />
+    <!-- awesome fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- main css link -->
+    <link rel="stylesheet" href="main.css" />
+    <!-- javascript link -->
+    <script type="module" defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="backdrop"></div>
+
+      <nav class="navbar">
+        <button class="navbar__toggle-button">
+          <span class="navbar_toogle"></span>
+          <span class="navbar_toogle"></span>
+          <span class="navbar_toogle"></span>
+        </button>
+        <div>
+          <img class="logo" src="images/pharm_logo.png" alt="Pharma Logo" />
+        </div>
+        <ul class="nav__item-items">
+          <li class="nav__item-item">
+            <a class="nav__item-link" href="#">Drug Inventory</a>
+          </li>
+          <li class="nav__item-item">
+            <a class="nav__item-link nav__link-active" href="index.html"
+              >Assessment</a
+            >
+          </li>
+          <li class="nav__item-item">
+            <a class="nav__item-link" href="#"> Dispensing </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="main__search-bar">
+        <div class="search-bar">
+          <input
+            type="text"
+            class="search__bar_input"
+            placeholder=" 🔍 Search Generic or Brand"
+          />
+        </div>
+
+        <div class="main_biodata">
+          <div class="main_user-image">
+            <img src="images/user_dp.jpg" alt="user's Image" />
+          </div>
+        </div>
+      </div>
+      <div class="error__message">
+        <h5 class="__error"></h5>
+      </div>
+      <!-- bio-data details -->
+      <div class="main_user_biodata">
+        <div class="biodata__user">
+          <div class="user__display_picture">
+            <img src="images/user_dp.jpg" alt="user display picture" />
+          </div>
+          <button class="clear_patient_data">x</button>
+          <div class="user_biodata_details">
+            <div class="patient_info_data">
+              <div class="info_data">
+                <h5 class="patient_name_detail">Name :</h5>
+                <h5 class="patient_name_info">Peter Griffin</h5>
+              </div>
+              <div class="info_data">
+                <h5 class="patient_age_detail">Age :</h5>
+                <h5 class="patient_age_info">32 year old</h5>
+              </div>
+              <div class="info_data">
+                <h5 class="patient_sex_detail">Sex :</h5>
+                <h5 class="patient_sex_info">Male</h5>
+              </div>
+              <div class="info_data">
+                <h5 class="patient_telephone_detail">Telephone :</h5>
+                <h5 class="patient_telephone_info">
+                  <a href="tel:+2348190992016"> 08190992016 </a>
+                </h5>
+              </div>
+              <div class="info_data">
+                <button class="delete_patient">delete Patient</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="patient__search">
+          <input
+            type="text"
+            class="search_patient_info"
+            placeholder="Search Patient Name"
+          />
+          <div class="patient_info_render"></div>
+        </div>
+      </div>
+
+      <!-- bio data  -->
+      <div class="main__drug_tab">
+        <ul class="main__drug_headings">
+          <li class="main__drug_detail">Name</li>
+          <li class="main__drug_detail">Price</li>
+          <li class="main__drug_detail">Quantity</li>
+          <li class="main__drug_detail">Amount</li>
+        </ul>
+        <div class="main_drug__stock_quantity">
+          <div class="stock_details">Stock Qty :</div>
+          <div class="stock_amount">34</div>
+        </div>
+
+        <div class="main_drug__items">
+          <div class="main_drug__item">
+            <div class="main_drug">
+              <h5>chlorpheniramine</h5>
+            </div>
+            <div class="main_drug_price"><h5>4</h5></div>
+            <input type="number" value="1" class="main_drug_quantity" />
+            <div class="drug__total_amount"><h5>40</h5></div>
+            <div class="delete_drug">
+              <button class="delete__button">x</button>
+            </div>
+          </div>
+          <div class="main_drug__item">
+            <div class="main_drug">
+              <h5>Risperdal</h5>
+            </div>
+            <div class="main_drug_price"><h5>230</h5></div>
+            <input type="number" value="1" class="main_drug_quantity" />
+            <div class="drug__total_amount"><h5>2300</h5></div>
+            <div class="delete_drug">
+              <button class="delete__button">x</button>
+            </div>
+          </div>
+        </div>
+        <div class="main_drug_total_amount">
+          <div class="total_amount_detail">Total Amount</div>
+          <div class="total_amount">₦2340</div>
+          <div class="decision_buttons">
+            <button class="cancel_button">cancel</button>
+            <button class="continue_button">continue</button>
+          </div>
+        </div>
+      </div>
+      <div class="main__drug_interaction_checker">
+        <div class="drug_interaction"></div>
+        <div class="drug_advice"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <ul class="footer__links">
+        <li class="footer__link">
+          <a class="footer__link_item" href="#">Contact</a>
+        </li>
+        <li class="footer__link">
+          <a class="footer__link_item" href="#">Support</a>
+        </li>
+      </ul>
+    </footer>
+
+    <!-- <a target="_blank" href="https://icons8.com/icon/GTNpFyhi7m46/pharmacy"
+      >Pharmacy</a
+    >
+    icon by
+    <a target="_blank" href="https://icons8.com">Icons8</a> -->
+  </body>
+</html>

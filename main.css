@@ -1,0 +1,518 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@100&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Monsterrat", sans-serif;
+}
+
+.error__message {
+  display: none;
+  z-index: 30;
+  width: 100%;
+  position: relative;
+  top: 10px;
+  height: 3rem;
+  animation: message 10ms alternate linear;
+}
+.error__message .__error {
+  margin: auto;
+  padding: 1rem;
+  width: 80%;
+  background-color: #ececec;
+  border-radius: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 1px 1px 1px 1px rgba(109, 108, 108, 0.733);
+  color: rgb(230, 129, 129);
+}
+
+.backdrop {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(77, 77, 77, 0.7);
+  position: fixed;
+  z-index: 20;
+  display: none;
+}
+
+.main_user_biodata {
+  height: 50%;
+  width: 80%;
+  position: absolute;
+  z-index: 30;
+  top: 90px;
+  left: 30px;
+  right: 30px;
+  display: none;
+}
+@media (min-width: 25rem) {
+  .main_user_biodata {
+    left: 70px;
+    max-width: 300px;
+  }
+}
+.main_user_biodata .clear_patient_data {
+  position: absolute;
+  top: 0.125rem;
+  right: 1.89rem;
+  background-color: #df2e2e;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.main_user_biodata .clear_patient_data:hover {
+  background-color: #f0f2f3;
+  color: #df2e2e;
+}
+.main_user_biodata .patient__search {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  display: none;
+  padding: 1rem;
+}
+.main_user_biodata .patient__search .search_patient_info {
+  margin: auto;
+  margin-top: 10px;
+  width: 100%;
+  padding: 1rem;
+  outline: none;
+  border-radius: 20px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 10%;
+  text-align: center;
+}
+.main_user_biodata .patient__search .search_patient_info::placeholder {
+  font-variant: small-caps;
+  color: #ccc;
+}
+.main_user_biodata .biodata__user {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding: 0.2rem 0;
+  margin: auto;
+}
+.main_user_biodata .user__display_picture {
+  display: flex;
+  justify-content: center;
+  height: 30%;
+  width: 100%;
+}
+.main_user_biodata .user__display_picture img {
+  padding: 15px;
+  height: 100%;
+  width: 34%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.user_biodata_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  height: 70%;
+}
+.user_biodata_details .patient_info_data {
+  width: 100%;
+  height: 100%;
+}
+.user_biodata_details h5 {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  color: #000;
+  text-transform: uppercase;
+}
+.user_biodata_details a {
+  text-decoration: none;
+  color: #000;
+}
+.user_biodata_details .info_data {
+  width: 100%;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.user_biodata_details button {
+  all: unset;
+  border-radius: 5px;
+  margin: 0 2rem;
+  padding: 0.7rem;
+  cursor: pointer;
+  font-variant: small-caps;
+}
+.user_biodata_details .delete_patient {
+  background-color: #cf4c4c;
+  color: white;
+}
+.user_biodata_details .delete_patient:hover, .user_biodata_details .delete_patient:active {
+  background-color: #f6f8f8;
+  color: #cf4c4c;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e0dada;
+  height: 3rem;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+.navbar .nav__item-items {
+  list-style: none;
+  margin: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  display: none;
+}
+@media (min-width: 40rem) {
+  .navbar .nav__item-items {
+    display: flex;
+  }
+}
+.navbar .nav__item-items .nav__item-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+.navbar .nav__item-items .nav__item-link:hover, .navbar .nav__item-items .nav__item-link:active {
+  color: white;
+}
+.navbar .nav__item-items .nav__link-active {
+  color: white;
+}
+.navbar .nav__item-item {
+  margin: 0 1rem;
+}
+.navbar .logo {
+  height: 1.6rem;
+  vertical-align: middle;
+  background-color: #e0dada;
+  padding: 0 0.5rem;
+}
+.navbar .navbar__toggle-button {
+  all: unset;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  margin: 0 0.5rem;
+}
+@media (min-width: 40rem) {
+  .navbar .navbar__toggle-button {
+    display: none;
+  }
+}
+.navbar .navbar__toggle-button:hover, .navbar .navbar__toggle-button:active {
+  border: 1px solid white;
+}
+.navbar .navbar__toggle-button .navbar_toogle {
+  display: block;
+  height: 0.5rem;
+  border: 1px solid black;
+  border-radius: 1.2rem;
+  background-color: white;
+  margin: 0.2rem 0;
+}
+
+main {
+  background: linear-gradient(rgba(20, 138, 228, 0.7176470588) 50%, rgba(207, 207, 207, 0.7529411765), rgba(91, 164, 236, 0)), url("images/packings-pills-capsules-medicines.jpg") no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+main .main__search-bar {
+  position: relative;
+  padding-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+}
+main .main__search-bar .search__bar_input {
+  all: unset;
+  margin: 1.5rem 1rem;
+  background-color: white;
+  border-radius: 2.5rem;
+  color: #000;
+  padding: 1rem 2.5rem;
+  width: 60%;
+}
+main .main__search-bar .search__bar_input::placeholder {
+  font-size: small;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #000;
+}
+main .main__search-bar .main_biodata {
+  display: inline-block;
+  flex-shrink: 2;
+}
+main .main__search-bar .main_user-image {
+  display: inline-block;
+  cursor: pointer;
+  width: 100%;
+}
+main .main__search-bar .main_user-image:hover {
+  transform: translateY(-2px);
+}
+main .main__search-bar .main_user-image:active {
+  box-shadow: 2px -2px 2px 2px rgba(42, 131, 199, 0.718);
+  transform: translateY(0);
+}
+main .main__search-bar .main_user-image img {
+  height: 100px;
+  width: 100px;
+}
+main .main__drug_tab {
+  background-color: white;
+  margin: 1rem;
+  padding: 1rem 0.5rem;
+  border-radius: 20px;
+}
+main .main__drug_tab .main__drug_headings {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #cccccc;
+}
+main .main__drug_tab .main__drug_headings .main__drug_detail {
+  background-color: #fff;
+  color: #000;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-align: center;
+}
+main .main_drug__stock_quantity {
+  justify-self: flex-end;
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+  font-variant: small-caps;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+}
+main .main_drug__items {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-flow: column wrap;
+}
+main .main_drug__item {
+  font-style: italic;
+  font-variant: small-caps;
+  margin: 0.2rem 0.5rem;
+  padding: 1rem;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  background-color: #e8e8f0;
+}
+main .main_drug__item:hover, main .main_drug__item:active {
+  background-color: rgb(222, 222, 243);
+  cursor: pointer;
+}
+main .main_drug__item input[type=number] {
+  width: 15%;
+  border: none;
+  text-align: center;
+  outline: none;
+  border-radius: 10px;
+  background-color: #e8e8f0;
+  flex-shrink: 2;
+  font-weight: bold;
+}
+@media (min-width: 40rem) {
+  main .main_drug__item input[type=number] {
+    text-align: left;
+  }
+}
+main .main_drug__item h5 {
+  margin: 0;
+}
+main .main_drug__item .main_drug {
+  width: 20%;
+  overflow: auto;
+  resize: both;
+  flex-shrink: 2;
+  flex-grow: 0;
+  padding-right: 5px;
+  text-align: center;
+}
+@media (min-width: 40rem) {
+  main .main_drug__item .main_drug {
+    text-align: right;
+  }
+}
+main .main_drug__item .main_drug_price {
+  width: 20%;
+  text-align: center;
+}
+main .main_drug__item .delete__button {
+  color: white;
+  background-color: #cf4c4c;
+  outline: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #e8e8f0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+main .main_drug__item .delete__button:active, main .main_drug__item .delete__button:hover {
+  color: #cf4c4c;
+  background-color: white;
+}
+main .main_drug__item .drug__total_amount {
+  width: 10%;
+  overflow-x: scroll;
+}
+@media (min-width: 40rem) {
+  main .main_drug__item .drug__total_amount {
+    overflow: hidden;
+  }
+}
+main .main_drug_total_amount {
+  background-color: #e8e8f0;
+  margin: 1rem 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 20px;
+  justify-self: flex-end;
+  font-weight: bold;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  align-content: flex-end;
+  align-items: flex-end;
+}
+main .main_drug_total_amount:hover, main .main_drug_total_amount:active {
+  background-color: rgb(222, 222, 243);
+  cursor: pointer;
+}
+main .main_drug_total_amount button {
+  padding: 0.7rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+  font-variant: small-caps;
+}
+main .total_amount_detail {
+  color: gray;
+  padding: 0 1.5rem;
+}
+main .total_amount {
+  height: 70%;
+  font-size: 40px;
+  padding: 1rem;
+  text-decoration: underline;
+}
+main .decision_buttons {
+  padding: 0.5rem 0;
+}
+main .continue_button {
+  background-color: rgba(53, 168, 255, 0.9921568627);
+  color: white;
+}
+main .continue_button:active, main .continue_button:hover {
+  color: rgba(53, 168, 255, 0.9921568627);
+  background-color: white;
+}
+main .continue_button:disabled {
+  background-color: rgba(204, 204, 204, 0.8);
+  color: #292828;
+}
+main .cancel_button {
+  background-color: #cf4c4c;
+  color: white;
+}
+main .cancel_button:hover, main .cancel_button:active {
+  color: #cf4c4c;
+  background-color: white;
+}
+
+.show {
+  display: block;
+}
+
+.flex_show {
+  display: flex;
+}
+
+#wrong_input {
+  background-color: #df2e2e;
+}
+
+#noshow {
+  display: none;
+}
+
+#patient_show {
+  display: block;
+}
+
+.footer {
+  background-color: black;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+.footer .footer__links {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+@media (min-width: 40rem) {
+  .footer .footer__links {
+    flex-flow: row wrap;
+  }
+}
+.footer .footer__link {
+  list-style: none;
+  margin: 0;
+  padding: 0.2rem 2.5rem;
+}
+.footer .footer__link_item {
+  text-decoration: none;
+  color: white;
+}
+.footer .footer__link_item:hover {
+  color: rgb(167, 167, 167);
+}
+
+@keyframes message {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

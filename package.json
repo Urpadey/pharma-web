@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "mongoose": "^6.5.2"
+  },
+  "name": "pharma-web-app",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
